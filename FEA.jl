@@ -3,7 +3,6 @@ module FEA
 using MKL
 using LinearAlgebra
 using SparseArrays
-using Krylov
 
 export fea
 

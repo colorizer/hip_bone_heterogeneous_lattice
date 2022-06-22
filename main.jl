@@ -11,12 +11,13 @@ using SparseArrays
 using JLD2
 using DataFrames
 
-import gen_ltc_msh: generate_t_matrices
+import Main.gen_ltc_msh: generate_t_matrices, generate_lattice
 import Main.FEA: fea
 import Main.bcs: generate_neumann_bcs, generate_dirichlet_bcs, weights, neumann
 import Main.rho_update: get_Area, get_C_U_∂K_U, update_densities
 
-nodeCoords, node_ids, cell_ids, connectivities, cell_connectivity, phases, phase_counts, lengths, redundancy, boundary_nodes_bool, connectivities_phase_id, Vᵤ = load("hip_bone_heterogeneous_lattice.jld2", "nodeCoords", "node_ids", "cell_ids", "connectivities", "cell_connectivity", "phases", "phase_counts", "lengths", "redundancy", "boundary_nodes_bool", "connectivities_phase_id", "Vᵤ");
+filename = "hip_bone_hex.msh";
+nodeCoords, node_ids, cell_ids, connectivities, cell_connectivity, phases, phase_counts, lengths, redundancy, boundary_nodes_bool, connectivities_phase_id, Vᵤ = generate_lattice(filename);
 
 t_matrices, tangents = generate_t_matrices(nodeCoords, connectivities); # tangents for each element and the corresponding transformation matrices. Used in FEA
 

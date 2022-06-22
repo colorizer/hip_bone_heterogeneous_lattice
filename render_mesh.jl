@@ -9,7 +9,7 @@ mu2 = 0.109
 # based on https://juliaplots.org/MakieReferenceImages/gallery//merged_color_mesh/index.html
 filename = "hip_bone_lattice_outputs_$(mu1)_0.4"
 
-nodeCoords, connectivities, connectivities_phase_id, d_e, df = load("final_results_beta_05/"*filename*".jld2", "nodeCoords", "connectivities", "connectivities_phase_id", "d_e", "df");
+nodeCoords, connectivities, connectivities_phase_id, d_e, df = load(filename*".jld2", "nodeCoords", "connectivities", "connectivities_phase_id", "d_e", "df");
 println("loaded values")
 
 clr_list = distinguishable_colors(8, [RGB(1,1,1), RGB(0,0,0)], dropseed=true);

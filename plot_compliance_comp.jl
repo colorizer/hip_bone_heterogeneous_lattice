@@ -8,8 +8,8 @@ using DataFrames
 combo(μ) = "$(μ)_0.4"
 # https://levelup.gitconnected.com/makie-barplots-in-julia-2821dbe35366
 
-c_df1, df1 = load("final_results_beta_05/hip_bone_lattice_outputs_"*combo(μ1)*".jld2", "c_df", "df");
-c_df2, df2 = load("final_results_beta_05/hip_bone_lattice_outputs_"*combo(μ2)*".jld2", "c_df", "df");
+c_df1, df1 = load("hip_bone_lattice_outputs_"*combo(μ1)*".jld2", "c_df", "df");
+c_df2, df2 = load("hip_bone_lattice_outputs_"*combo(μ2)*".jld2", "c_df", "df");
 println("loaded values")
 
 sf = df2[1, :C]/df1[1,:C]

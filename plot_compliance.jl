@@ -9,7 +9,7 @@ combo(μ) = "$(μ)_0.4"
 
 # https://levelup.gitconnected.com/makie-barplots-in-julia-2821dbe35366
 constraints = combo(μ1);
-nodeCoords, connectivities, connectivities_phase_id, d_e, l_e, A_e, df, c_df = load("final_results_beta_05/hip_bone_lattice_outputs_"*constraints*".jld2", "nodeCoords", "connectivities", "connectivities_phase_id", "d_e", "L_e", "A_e", "df", "c_df");
+nodeCoords, connectivities, connectivities_phase_id, d_e, l_e, A_e, df, c_df = load("hip_bone_lattice_outputs_"*constraints*".jld2", "nodeCoords", "connectivities", "connectivities_phase_id", "d_e", "L_e", "A_e", "df", "c_df");
 println("loaded values")
 
 fig = Figure(resolution = (1024, 900));
