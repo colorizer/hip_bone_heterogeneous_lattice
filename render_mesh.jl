@@ -7,9 +7,9 @@ using DataFrames
 mu1 = 0.355
 mu2 = 0.109
 # based on https://juliaplots.org/MakieReferenceImages/gallery//merged_color_mesh/index.html
-filename = "hip_bone_lattice_outputs_$(mu1)_0.4"
+filename = "hip_bone_lattice_outputs_$(mu2)_0.4"
 
-nodeCoords, connectivities, connectivities_phase_id, d_e, df = load(filename*".jld2", "nodeCoords", "connectivities", "connectivities_phase_id", "d_e", "df");
+nodeCoords, connectivities, connectivities_phase_id, d_e, df = load("final_results_beta_05/"*filename*".jld2", "nodeCoords", "connectivities", "connectivities_phase_id", "d_e", "df");
 println("loaded values")
 
 clr_list = distinguishable_colors(8, [RGB(1,1,1), RGB(0,0,0)], dropseed=true);
@@ -33,5 +33,12 @@ Threads.@threads for i in 1:length(d_e)
     cylinders[i] = GeometryBasics.mesh(obj);
 end
 println("Cylinders ready")
-fig = GLMakie.poly(cylinders, color=clr_fnl)
-display(fig)
+#=f = Figure()
+ax = Axis3(f[1, 1]; leftspinevisible = false,
+        rightspinevisible = false,
+        bottomspinevisible = false,
+        topspinevisible = false)=#
+
+# hidedecorations!(ax)
+f = GLMakie.poly(cylinders, color=clr_fnl)
+display(f)

@@ -1,5 +1,7 @@
 # Topology Optimization of Human hip bone with Heterogeneous Lattice Structures
 
+(The following explains the organization of the code. To read more about this method, please refer to this link - [Topology Optimization of Human hip bone with Heterogeneous Lattice Structures](https://quasiengineer.dev/tech/engg/hip_bone_heterogeneous_lattice/).)
+
 ## What is this about?
 This work presents the multi-scale optimization of the human hip bone’s topology and microstructure considering the mechanical loads developed during the gait cycle. In other words, we take a highly constrained model of the human hip bone, mesh it with a special lattice structure and then optimise this mesh considering the loads that occur during walking.
 ![output mesh](images/output_mesh_109.jpg)
